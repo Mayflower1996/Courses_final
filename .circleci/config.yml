@@ -1,0 +1,36 @@
+version: 2.1
+workflows:
+  version: 2
+  test:
+    jobs:
+      - flake8
+      - pycodestyle
+      - static-type-checking
+
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+  flake8:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - run: pip install tox
+      - run: tox -eflake8
+  pycodestyle:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - run: pip install tox
+      - run: tox -epycodestyle
+  static-type-checking:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - run: pip install tox
+      - run: tox -emypy
