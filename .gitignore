@@ -7,3 +7,7 @@
 
 *.py[cod]
 .tox/
+
+log.html
+report.html
+output.xml
