@@ -12,5 +12,3 @@ HEADERS = {
   'sec-ch-ua-platform': '"Windows"'
 }
 URL = 'https://petstore.swagger.io/v2/user'
-
-
