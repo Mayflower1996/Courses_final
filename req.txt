@@ -5,3 +5,6 @@ mypy
 types-requests
 sympy
 pytest-cov
+pytest
+jsonschema
+requests
