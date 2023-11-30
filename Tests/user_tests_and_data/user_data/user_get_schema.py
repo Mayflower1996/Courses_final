@@ -10,14 +10,13 @@ USER_GET_OK_RESPONSE_SCHEMA = {
         "phone": {"type": "string"},
         "userStatus": {"type": "integer"}
     },
-    "required": ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"]
-}
+    "required": ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"]}
 
-USER_GET_BAD_RESPONSE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "code": {"type": "integer"},
-        "type": {"type": "string"},
-        "message": {"type": "string"}
-    }
-}
+RESPONSE_SCHEMA = {
+        "type": "object",
+        "properties": {
+            "code": {"type": "integer"},
+            "type": {"type": "string"},
+            "message": {"type": "string"}
+        },
+        "required": ["code", "type", "message"]}
