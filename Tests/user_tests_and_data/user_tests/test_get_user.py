@@ -1,7 +1,7 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from user_data.url_headers_auth_token import HEADERS, URL
+from user_data.url_headers import HEADERS, URL
 from user_data.user_get_schema import USER_GET_OK_RESPONSE_SCHEMA, RESPONSE_SCHEMA
 
 

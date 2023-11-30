@@ -3,7 +3,7 @@ import requests
 from jsonschema import validate
 from user_data.user_create_payload import CORRECT_TWO_USERS_PAYLOAD, \
     INCORRECT_USER_PAYLOAD_EMPTY_FIELDS, CORRECT_ONE_USER_PAYLOAD, INCORRECT_USER_PAYLOAD_LARGE_STATUS
-from user_data.url_headers_auth_token import HEADERS
+from user_data.url_headers import HEADERS
 from user_data.user_get_schema import RESPONSE_SCHEMA
 
 

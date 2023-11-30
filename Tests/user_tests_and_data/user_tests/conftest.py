@@ -1,6 +1,6 @@
 import pytest
 import requests
-from user_data.url_headers_auth_token import URL, HEADERS
+from user_data.url_headers import URL, HEADERS
 from user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS
 
 
