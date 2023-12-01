@@ -30,7 +30,7 @@ CORRECT_TWO_USERS_PAYLOAD = [{
         "userStatus": 0
     }]
 
-INCORRECT_USER_PAYLOAD_EMPTY_FIELDS = {
+USER_PAYLOAD_EMPTY_FIELDS = {
     "id": 3,
     "username": "",
     "firstName": "",
@@ -52,6 +52,30 @@ INCORRECT_USER_PAYLOAD_LARGE_STATUS = {
     "userStatus": 10000000000
 }
 
+INCORRECT_USER_PAYLOAD_MISSING_STATUS = {
+    "id": 0,
+    "username": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "password": "string",
+    "phone": "string"
+}
+
 USER_PAYLOADS = [("Correct two users payload", CORRECT_TWO_USERS_PAYLOAD),
                  ("Incorrect user payload with large status", INCORRECT_USER_PAYLOAD_LARGE_STATUS),
-                 ("Incorrect user payload with empty fields", INCORRECT_USER_PAYLOAD_EMPTY_FIELDS)]
+                 ("Incorrect user payload missing status", INCORRECT_USER_PAYLOAD_MISSING_STATUS)]
+
+CORRECT_USER_PAYLOADS = [("Correct one user payload", CORRECT_ONE_USER_PAYLOAD),
+                         ("User payload with empty fields", USER_PAYLOAD_EMPTY_FIELDS)]
+
+UPDATE_USER_PAYLOAD = {
+    "id": 0,
+    "username": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "password": "string",
+    "phone": "string",
+    "userStatus": 0
+}

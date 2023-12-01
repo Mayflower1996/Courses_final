@@ -1,7 +1,7 @@
 import pytest
 import requests
 from user_data.url_headers import URL, HEADERS
-from user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS
+from user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, CORRECT_USER_PAYLOADS
 
 
 @pytest.fixture(params=[f"{URL}/createWithArray", f"{URL}/createWithList"])
@@ -47,4 +47,9 @@ def good_login_user(good_login):
 
 @pytest.fixture(params=USER_PAYLOADS, ids=[x[0] for x in USER_PAYLOADS])
 def user_payload(request):
+    return request.param[1]
+
+
+@pytest.fixture(params=CORRECT_USER_PAYLOADS, ids=[x[0] for x in CORRECT_USER_PAYLOADS])
+def user_payload_correct(request):
     return request.param[1]

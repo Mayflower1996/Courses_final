@@ -2,35 +2,34 @@ import pytest
 import requests
 from jsonschema.validators import validate
 from user_data.url_headers import URL, HEADERS
-from user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD
 from user_data.user_get_schema import RESPONSE_SCHEMA
 
 
-@pytest.mark.order(11)
-def test_create_user_login(good_login_user):
+@pytest.mark.order(12)
+def test_create_user_login(good_login_user, user_payload_correct):
     if good_login_user == 200:
         url = f"{URL}/"
-        response = requests.post(url, headers=HEADERS, json=CORRECT_ONE_USER_PAYLOAD)
+        response = requests.post(url, headers=HEADERS, json=user_payload_correct)
         assert response.status_code == 200
         assert "200" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User login failed with status code: {good_login_user}")
+        pytest.fail(f"User login failed, status code: {good_login_user}")
 
 
-@pytest.mark.order(12)
-def test_create_user_not_login():
+@pytest.mark.order(13)
+def test_create_user_not_login(user_payload_correct):
     url = f"{URL}/"
-    response = requests.post(url, headers=HEADERS, json=CORRECT_ONE_USER_PAYLOAD)
+    response = requests.post(url, headers=HEADERS, json=user_payload_correct)
     if response.status_code == 401 or 403:
         assert response.status_code == 401 or 403
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User create success with status code: {response.status_code}")
+        pytest.fail(f"User created, status code: {response.status_code}")
 
 
-@pytest.mark.order(13)
-def test_create_two_users_and_large_status_and_empty_fields_login(good_login_user, user_payload):
+@pytest.mark.order(14)
+def test_create_user_bad_payload_login(good_login_user, user_payload):
     if good_login_user == 200:
         url = f"{URL}/"
         response = requests.post(url, headers=HEADERS, json=user_payload)
@@ -40,4 +39,4 @@ def test_create_two_users_and_large_status_and_empty_fields_login(good_login_use
         else:
             pytest.fail(f"User created, status code: {response.status_code}")
     else:
-        pytest.fail(f"User login failed with status code: {good_login_user}")
+        pytest.fail(f"User login failed, status code: {good_login_user}")

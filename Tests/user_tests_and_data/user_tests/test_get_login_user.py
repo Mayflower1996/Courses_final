@@ -13,7 +13,7 @@ def test_good_login_user(good_login):
         assert "logged in user session" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User login failed with status code: {response.status_code}")
+        pytest.fail(f"User login failed, status code: {response.status_code}")
 
 
 @pytest.mark.order(10)
@@ -24,7 +24,7 @@ def test_login_bad_user(bad_login):
         assert "error" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User login success with status code: {response.status_code}")
+        pytest.fail(f"User login success, status code: {response.status_code}")
 
 
 @pytest.mark.order(11)
@@ -35,4 +35,4 @@ def test_login_bad_pass():
         assert "error" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User login success with status code: {response.status_code}")
+        pytest.fail(f"User login success, status code: {response.status_code}")
