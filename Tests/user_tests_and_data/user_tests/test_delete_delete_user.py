@@ -6,8 +6,8 @@ from user_data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(16)
-def test_delete_user(good_username_create):
-    url = f"{URL}/{good_username_create}"
+def test_delete_user(valid_username_create):
+    url = f"{URL}/{valid_username_create}"
     response = requests.delete(url, headers=HEADERS, json={})
     if response.status_code == 200:
         assert "200" in response.text
@@ -17,8 +17,8 @@ def test_delete_user(good_username_create):
 
 
 @pytest.mark.order(17)
-def test_delete_not_found_user(bad_username):
-    url = f"{URL}/{bad_username}"
+def test_delete_not_found_user(invalid_username):
+    url = f"{URL}/{invalid_username}"
     response = requests.delete(url, headers=HEADERS, json={})
     assert response.status_code == 404
 

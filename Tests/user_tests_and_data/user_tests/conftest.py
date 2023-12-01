@@ -10,7 +10,7 @@ def endpoint_url(request):
 
 
 @pytest.fixture(scope="module")
-def good_username_create():
+def valid_username_create():
     url = f"{URL}/createWithArray"
     response = requests.post(url, headers=HEADERS, json=[CORRECT_ONE_USER_PAYLOAD])
     if response.status_code == 200:
@@ -21,26 +21,26 @@ def good_username_create():
 
 
 @pytest.fixture(scope="module")
-def bad_username():
+def invalid_username():
     username = "username1"
     return username
 
 
 @pytest.fixture(scope="module")
-def good_login():
+def valid_login():
     url = f"{URL}/login?username=testuser1&password=password1"
     return url
 
 
 @pytest.fixture(scope="module")
-def bad_login():
+def invalid_login():
     url = f"{URL}/login?username=username1&password=gsdfgsdfg"
     return url
 
 
 @pytest.fixture(scope="module")
-def good_login_user(good_login):
-    url = good_login
+def valid_login_user(valid_login):
+    url = valid_login
     response = requests.get(url, headers=HEADERS, json={})
     return response.status_code
 

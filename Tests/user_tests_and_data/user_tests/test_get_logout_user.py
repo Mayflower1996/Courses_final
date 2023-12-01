@@ -6,8 +6,8 @@ from user_data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(19)
-def test_logout_user(good_login_user):
-    if good_login_user == 200:
+def test_logout_user(valid_login_user):
+    if valid_login_user == 200:
         url = f"{URL}/logout"
         response = requests.get(url, headers=HEADERS, json={})
         assert response.status_code == 200
@@ -19,4 +19,4 @@ def test_logout_user(good_login_user):
         assert response.status_code != 200
         assert "error" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
-        pytest.fail(f"User login failed, status code: {good_login_user}")
+        pytest.fail(f"User login failed, status code: {valid_login_user}")

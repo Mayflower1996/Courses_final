@@ -2,25 +2,25 @@ import pytest
 import requests
 from jsonschema.validators import validate
 from user_data.url_headers import HEADERS, URL
-from user_data.user_get_schema import USER_GET_OK_RESPONSE_SCHEMA, RESPONSE_SCHEMA
+from user_data.user_get_schema import RESPONSE_SCHEMA, USER_GET_VALID_RESPONSE_SCHEMA
 
 
 @pytest.mark.order(6)
-def test_get_good_user(good_username_create):
-    url = f"{URL}/{good_username_create}"
+def test_get_valid_user(valid_username_create):
+    url = f"{URL}/{valid_username_create}"
     response = requests.get(url)
     if response.status_code == 200:
         assert response.status_code == 200
         assert "username" in response.json()
         assert "id" in response.json()
-        validate(instance=response.json(), schema=USER_GET_OK_RESPONSE_SCHEMA)
+        validate(instance=response.json(), schema=USER_GET_VALID_RESPONSE_SCHEMA)
     else:
         pytest.fail(f"Can't get user by username, status code: {response.status_code}")
 
 
 @pytest.mark.order(7)
-def test_get_bad_user(bad_username):
-    url = f"{URL}/{bad_username}"
+def test_get_invalid_user(invalid_username):
+    url = f"{URL}/{invalid_username}"
     response = requests.get(url)
     if response.status_code == 404:
         assert "User not found" in response.text

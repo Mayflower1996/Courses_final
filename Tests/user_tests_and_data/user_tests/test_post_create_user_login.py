@@ -6,15 +6,15 @@ from user_data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(12)
-def test_create_user_login(good_login_user, user_payload_correct):
-    if good_login_user == 200:
+def test_create_user_login(valid_login_user, user_payload_correct):
+    if valid_login_user == 200:
         url = f"{URL}/"
         response = requests.post(url, headers=HEADERS, json=user_payload_correct)
         assert response.status_code == 200
         assert "200" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
-        pytest.fail(f"User login failed, status code: {good_login_user}")
+        pytest.fail(f"User login failed, status code: {valid_login_user}")
 
 
 @pytest.mark.order(13)
@@ -29,8 +29,8 @@ def test_create_user_not_login(user_payload_correct):
 
 
 @pytest.mark.order(14)
-def test_create_user_bad_payload_login(good_login_user, user_payload):
-    if good_login_user == 200:
+def test_create_user_invalid_payload_login(valid_login_user, user_payload):
+    if valid_login_user == 200:
         url = f"{URL}/"
         response = requests.post(url, headers=HEADERS, json=user_payload)
         if response.status_code == 500:
@@ -39,4 +39,4 @@ def test_create_user_bad_payload_login(good_login_user, user_payload):
         else:
             pytest.fail(f"User created, status code: {response.status_code}")
     else:
-        pytest.fail(f"User login failed, status code: {good_login_user}")
+        pytest.fail(f"User login failed, status code: {valid_login_user}")

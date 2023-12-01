@@ -1,4 +1,4 @@
-USER_GET_OK_RESPONSE_SCHEMA = {
+USER_GET_VALID_RESPONSE_SCHEMA = {
     "type": "object",
     "properties": {
         "id": {"type": "integer"},

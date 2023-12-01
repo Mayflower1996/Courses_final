@@ -6,8 +6,8 @@ from user_data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(9)
-def test_good_login_user(good_login):
-    url = good_login
+def test_valid_login_user(valid_login):
+    url = valid_login
     response = requests.get(url, headers=HEADERS, json={})
     if response.status_code == 200:
         assert "logged in user session" in response.text
@@ -17,8 +17,8 @@ def test_good_login_user(good_login):
 
 
 @pytest.mark.order(10)
-def test_login_bad_user(bad_login):
-    url = bad_login
+def test_login_invalid_user(invalid_login):
+    url = invalid_login
     response = requests.get(url, headers=HEADERS, json={})
     if response.status_code == 400:
         assert "error" in response.text
@@ -28,7 +28,7 @@ def test_login_bad_user(bad_login):
 
 
 @pytest.mark.order(11)
-def test_login_bad_pass():
+def test_login_invalid_pass():
     url = f"{URL}/login?username=testuser1&password=gsdfgsdfg"
     response = requests.get(url, headers=HEADERS, json={})
     if response.status_code == 400:
