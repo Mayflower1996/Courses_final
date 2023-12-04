@@ -1,8 +1,9 @@
 import pytest
 import requests
 from jsonschema import validate
-from user_data.url_headers import HEADERS, URL
-from user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.user_tests_and_data.user_data.url_headers import HEADERS, URL
+from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.conftest import valid_username_create, user_payload_correct, user_payload
 
 
 @pytest.mark.order(15)

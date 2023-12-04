@@ -8,7 +8,8 @@
 *.py[cod]
 .tox/
 
-.assets/
+assets/
+.pytest_cache/
 
 *.html
 *.xml

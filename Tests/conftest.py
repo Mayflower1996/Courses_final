@@ -1,7 +1,8 @@
 import pytest
 import requests
-from user_data.url_headers import URL, HEADERS
-from user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, CORRECT_USER_PAYLOADS
+from Tests.user_tests_and_data.user_data.url_headers import URL, HEADERS
+from Tests.user_tests_and_data.user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
+    CORRECT_USER_PAYLOADS
 
 
 @pytest.fixture(params=[f"{URL}/createWithArray", f"{URL}/createWithList"])

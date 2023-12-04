@@ -1,10 +1,11 @@
 import pytest
 import requests
 from jsonschema import validate
-from user_data.user_create_payload import CORRECT_TWO_USERS_PAYLOAD, CORRECT_ONE_USER_PAYLOAD, \
-    INCORRECT_USER_PAYLOAD_LARGE_STATUS, USER_PAYLOAD_EMPTY_FIELDS
-from user_data.url_headers import HEADERS
-from user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.user_tests_and_data.user_data.user_create_payload import CORRECT_TWO_USERS_PAYLOAD, \
+    CORRECT_ONE_USER_PAYLOAD, INCORRECT_USER_PAYLOAD_LARGE_STATUS, USER_PAYLOAD_EMPTY_FIELDS
+from Tests.user_tests_and_data.user_data.url_headers import HEADERS
+from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.conftest import endpoint_url
 
 
 @pytest.mark.order(1)

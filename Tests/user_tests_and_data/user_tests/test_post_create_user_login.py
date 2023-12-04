@@ -1,12 +1,13 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from user_data.url_headers import URL, HEADERS
-from user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.user_tests_and_data.user_data.url_headers import URL, HEADERS
+from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
+from Tests.conftest import valid_login_user, user_payload_correct, user_payload, valid_login
 
 
 @pytest.mark.order(12)
-def test_create_user_login(valid_login_user, user_payload_correct):
+def test_create_user_login(valid_login_user, user_payload_correct, valid_login):
     if valid_login_user == 200:
         url = f"{URL}/"
         response = requests.post(url, headers=HEADERS, json=user_payload_correct)
