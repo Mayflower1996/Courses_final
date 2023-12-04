@@ -1,7 +1,0 @@
-flake8
-flake8-quotes
-pydocstyle
-mypy
-types-requests
-sympy
-pytest-cov
