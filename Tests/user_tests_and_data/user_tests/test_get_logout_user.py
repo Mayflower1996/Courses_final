@@ -3,7 +3,7 @@ import requests
 from jsonschema.validators import validate
 from Tests.user_tests_and_data.user_data.url_headers import URL, HEADERS
 from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
-from Tests.conftest import valid_login_user, valid_login # noqa
+from Tests.conftest import valid_login_user, valid_login
 
 
 @pytest.mark.order(19)
