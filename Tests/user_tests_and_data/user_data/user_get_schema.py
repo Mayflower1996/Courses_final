@@ -10,7 +10,8 @@ USER_GET_VALID_RESPONSE_SCHEMA = {
         "phone": {"type": "string"},
         "userStatus": {"type": "integer"}
     },
-    "required": ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"]}
+    "required": ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"]
+}
 
 RESPONSE_SCHEMA = {
         "type": "object",

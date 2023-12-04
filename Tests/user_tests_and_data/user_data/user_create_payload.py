@@ -9,16 +9,17 @@ CORRECT_ONE_USER_PAYLOAD = {
     "userStatus": 0
 }
 
-CORRECT_TWO_USERS_PAYLOAD = [{
-    "id": 1,
-    "username": "testuser1",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john@example.com",
-    "password": "password1",
-    "phone": "1234567890",
-    "userStatus": 0
-},
+CORRECT_TWO_USERS_PAYLOAD = [
+    {
+        "id": 1,
+        "username": "testuser1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john@example.com",
+        "password": "password1",
+        "phone": "1234567890",
+        "userStatus": 0
+    },
     {
         "id": 2,
         "username": "testuser2",
