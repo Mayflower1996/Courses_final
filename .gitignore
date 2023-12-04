@@ -8,5 +8,8 @@
 *.py[cod]
 .tox/
 
+.assets/
+
 *.html
 *.xml
+*.css
