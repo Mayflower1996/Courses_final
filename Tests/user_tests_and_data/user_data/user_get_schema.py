@@ -1,7 +1,6 @@
 USER_GET_VALID_RESPONSE_SCHEMA = {
     "type": "object",
-    "properties":
-    {
+    "properties": {
         "id": {"type": "integer"},
         "username": {"type": "string"},
         "firstName": {"type": "string"},
@@ -15,11 +14,11 @@ USER_GET_VALID_RESPONSE_SCHEMA = {
 }
 
 RESPONSE_SCHEMA = {
-        "type": "object",
-        "properties": {
-            "code": {"type": "integer"},
-            "type": {"type": "string"},
-            "message": {"type": "string"}
-        },
-        "required": ["code", "type", "message"]
+    "type": "object",
+    "properties": {
+        "code": {"type": "integer"},
+        "type": {"type": "string"},
+        "message": {"type": "string"}
+    },
+    "required": ["code", "type", "message"]
 }
