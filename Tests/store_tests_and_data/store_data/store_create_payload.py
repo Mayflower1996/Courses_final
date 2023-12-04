@@ -7,7 +7,7 @@ VALID_ONE_PET_PAYLOAD = {
     "complete": False
 }
 
-#should return 500 (expected fail)
+# should return 500 (expected fail)
 INVALID_TWO_PETS_PAYLOAD = [{
     "id": 1,
     "petId": 1,
@@ -61,7 +61,7 @@ INVALID_ORDER_PAYLOAD_LARGE_QUANTITY = {
     "complete": False
 }
 
-#returns 200
+# returns 200
 INVALID_ORDER_PAYLOAD_EMPTY_STATUS = {
     "id": 0,
     "petId": 0,
@@ -72,5 +72,5 @@ INVALID_ORDER_PAYLOAD_EMPTY_STATUS = {
 }
 
 INVALID_ORDER_PAYLOADS = [("Invalid order payload with large ID", INVALID_ORDER_PAYLOAD_LARGE_ID),
-                 ("Invalid order payload with large quantity", INVALID_ORDER_PAYLOAD_LARGE_QUANTITY),
-                 ("Invalid order payload with empty fields", INVALID_ORDER_PAYLOAD_EMPTY_FIELDS)]
+                          ("Invalid order payload with large quantity", INVALID_ORDER_PAYLOAD_LARGE_QUANTITY),
+                          ("Invalid order payload with empty fields", INVALID_ORDER_PAYLOAD_EMPTY_FIELDS)]
