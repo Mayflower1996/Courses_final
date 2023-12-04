@@ -13,9 +13,7 @@ pipelines:
           script:
             # Enforce style consistency across Python projects https://flake8.pycqa.org
             - pip install flake8
-            - flake8 --ignore=F401
-            - flake8 --ignore=F811
-            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - flake8 . --extend-exclude=dist,build --show-source --statistics --ignore=F401 --ignore=F811
       - step:
           name: pycodestyle lint code
           script:
