@@ -28,7 +28,8 @@ CORRECT_TWO_USERS_PAYLOAD = [{
         "password": "password2",
         "phone": "9876543210",
         "userStatus": 0
-    }]
+    }
+]
 
 USER_PAYLOAD_EMPTY_FIELDS = {
     "id": 3,

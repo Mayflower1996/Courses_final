@@ -19,4 +19,5 @@ RESPONSE_SCHEMA = {
             "type": {"type": "string"},
             "message": {"type": "string"}
         },
-        "required": ["code", "type", "message"]}
+        "required": ["code", "type", "message"]
+}
