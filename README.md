@@ -1,48 +1,42 @@
-# Pet Store API Testing with ROBOT Framework #
+# Pet Store API Testing with Pytest Framework #
 
-This repository contains automated API tests for the Pet Store, covering the `/user`, `/pet`, and `/store` endpoints, using the ROBOT framework. 
+This repository contains automated API tests for the Pet Store, covering the `/user`, `/pet`, and `/store` endpoints, using the Pytest framework. 
 These tests help ensure the functionality and reliability of the Pet Store API.
 
 ## Prerequisites
 
-Before running the tests, you need to have the following prerequisites installed on your system:
+Before running the tests, make sure you have the following prerequisites installed:
 
-- Python 3.x
-- ROBOT Framework
-- Requests Library for ROBOT Framework
+- Python 3.x: https://www.python.org/downloads/
+- Pip: https://pip.pypa.io/en/stable/installation/
+- Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-You can install ROBOT Framework and the Requests library using pip:
+## Installation
 
-pip install robotframework
-pip install robotframework-requests
-
-## Configuration
-Clone this repository to your local machine:
+1. Clone the repository:
 
 git clone https://yourusername/course-auto/the-pyoneers.git
+pip install -r req.txt
 
-Open the tests/variables.robot file and set the base URL for the Pet Store API if necessary:
 
-*** Variables ***
-${BASE URL}    http://petstore.swagger.io/v2
+*** Configuration ***
+base_url: http://petstore.swagger.io/v2
 
 ## Running the Tests
-You can run the tests using the ROBOT framework command-line tool. Here are the basic commands for running the tests:
+User endpoint: pytest Tests/user_tests_and_data
+Pet endpoint: pytest Tests/pet_tests_and_data
+Store endpoint: pytest Tests/store_tests_and_data
+
 
 # Running All Tests
 To run all the tests, execute the following command:
+pytest
 
-robot tests
-
-# Running Specific Tests
-You can also run specific test suites or individual test cases by specifying their paths:
-
-robot tests/test_suite_name.robot
+## Test Structure
+The tests are organized in the Tests directory. Each endpoint (e.g., /user, /pet, /store) has its own test folder and files.
 
 ## Generating Reports
-ROBOT Framework generates test reports in HTML format. To generate a report, use the --output option:
-
-robot --output output.html tests
+Pytest Framework will generate test reports in HTML format.
 
 ## Test Results
 After running the tests, you can find the test results in the output directory. Open the HTML report in your web browser to view the test results.
