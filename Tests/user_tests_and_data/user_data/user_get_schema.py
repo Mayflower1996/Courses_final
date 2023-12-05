@@ -1,19 +1,25 @@
 USER_GET_VALID_RESPONSE_SCHEMA = {
-  "type": "array",
-  "items": {
-    "type": "object",
-    "properties": {
-      "id": {"type": "integer"},
-      "username": {"type": "string"},
-      "firstName": {"type": "string"},
-      "lastName": {"type": "string"},
-      "email": {"type": "string", "format": "email"},
-      "password": {"type": "string"},
-      "phone": {"type": "string"},
-      "userStatus": {"type": "integer"}
-    },
-    "required": ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"]
-  }
+  "type": "object",
+  "properties": {
+    "email": {"type": "string", "format": "email"},
+    "firstName": {"type": "string"},
+    "id": {"type": "integer"},
+    "lastName": {"type": "string"},
+    "password": {"type": "string"},
+    "phone": {"type": "string"},
+    "userStatus": {"type": "integer"},
+    "username": {"type": "string"}
+  },
+  "required": [
+    "id",
+    "username",
+    "firstName",
+    "lastName",
+    "email",
+    "password",
+    "phone",
+    "userStatus"
+  ]
 }
 
 RESPONSE_SCHEMA_ERROR = {

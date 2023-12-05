@@ -34,7 +34,7 @@ def test_get_invalid_user(invalid_username):
 def test_empty_username():
     url = f"{URL_USER}/"
     response = requests.post(url, headers=HEADERS, json={})
-    if response.status_code == 404 or 400:
+    if response.status_code == 405 or 400:
         assert "Not found" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA_ERROR)
     else:
