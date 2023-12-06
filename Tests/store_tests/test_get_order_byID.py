@@ -1,12 +1,12 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from ..store_data.url_headers import HEADERS, URL
-from ..store_data.store_get_schema import RESPONSE_SCHEMA, ORDER_GET_VALID_RESPONSE_SCHEMA
+from data.url_headers import URL_STORE
+from data.store_get_schema import RESPONSE_SCHEMA, ORDER_GET_VALID_RESPONSE_SCHEMA
 
 
 def test_get_valid_order(valid_order_create):
-    url = f"{URL}/order/{valid_order_create}"
+    url = f"{URL_STORE}/order/{valid_order_create}"
     response = requests.get(url)
     if response.status_code == 200:
         assert response.status_code == 200
@@ -17,7 +17,7 @@ def test_get_valid_order(valid_order_create):
 
 
 def test_get_invalid_order(absent_order):
-    url = f"{URL}/order/{absent_order}"
+    url = f"{URL_STORE}/order/{absent_order}"
     response = requests.get(url)
     if response.status_code == 404:
         assert "Order not found" in response.text
@@ -27,7 +27,7 @@ def test_get_invalid_order(absent_order):
 
 
 def test_no_orderid():
-    url = f"{URL}/order/"
+    url = f"{URL_STORE}/order/"
     response = requests.get(url)
     if response.status_code == 405 or 400:
         assert "unknown" in response.text
