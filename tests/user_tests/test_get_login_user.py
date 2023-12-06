@@ -1,9 +1,8 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from Tests.user_tests_and_data.user_data.url_headers import URL, HEADERS
-from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
-from Tests.conftest import valid_login, invalid_login
+from data.url_headers import HEADERS, URL_USER
+from data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(9)
@@ -30,7 +29,7 @@ def test_login_invalid_user(invalid_login):
 
 @pytest.mark.order(11)
 def test_login_invalid_pass():
-    url = f"{URL}/login?username=testuser1&password=gsdfgsdfg"
+    url = f"{URL_USER}/login?username=testuser1&password=gsdfgsdfg"
     response = requests.get(url, headers=HEADERS, json={})
     if response.status_code == 400:
         assert "error" in response.text
