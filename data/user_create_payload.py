@@ -1,12 +1,12 @@
 CORRECT_ONE_USER_PAYLOAD = {
-        "id": 1,
-        "username": "testuser1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "john@example.com",
-        "password": "password1",
-        "phone": "1234567890",
-        "userStatus": 0
+    "id": 1,
+    "username": "testuser1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "password": "password1",
+    "phone": "1234567890",
+    "userStatus": 0
 }
 
 CORRECT_TWO_USERS_PAYLOAD = [
@@ -64,12 +64,16 @@ INCORRECT_USER_PAYLOAD_MISSING_STATUS = {
     "phone": "string"
 }
 
-USER_PAYLOADS = [("Correct two users payload", CORRECT_TWO_USERS_PAYLOAD),
-                 ("Incorrect user payload with large status", INCORRECT_USER_PAYLOAD_LARGE_STATUS),
-                 ("Incorrect user payload missing status", INCORRECT_USER_PAYLOAD_MISSING_STATUS)]
+USER_PAYLOADS = [
+    ("Correct two users payload", CORRECT_TWO_USERS_PAYLOAD),
+    ("Incorrect user payload with large status", INCORRECT_USER_PAYLOAD_LARGE_STATUS),
+    ("Incorrect user payload missing status", INCORRECT_USER_PAYLOAD_MISSING_STATUS)
+]
 
-CORRECT_USER_PAYLOADS = [("Correct one user payload", CORRECT_ONE_USER_PAYLOAD),
-                         ("User payload with empty fields", USER_PAYLOAD_EMPTY_FIELDS)]
+CORRECT_USER_PAYLOADS = [
+    ("Correct one user payload", CORRECT_ONE_USER_PAYLOAD),
+    ("User payload with empty fields", USER_PAYLOAD_EMPTY_FIELDS)
+]
 
 UPDATE_USER_PAYLOAD = {
     "id": 0,
