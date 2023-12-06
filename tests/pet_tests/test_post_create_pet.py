@@ -1,9 +1,9 @@
 # import pytest
 import requests
 # from jsonschema.validators import validate
-from pet_data.url_headers import URL, HEADERS
+from data.url_headers import URL, HEADERS
 # from pet_get_schema import PET_GET_VALID_RESPONSE_SCHEMA
-from pet_data.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_TWO_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD
+# from data.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_TWO_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD
 
 
 def test_create_pet_success(new_pet_data):
