@@ -11,8 +11,8 @@ def test_delete_order(valid_order_create):
     if response.status_code == 200:
         assert "200" in response.text
         validate(instance=response.json(), schema=RESPONSE_SCHEMA)
-        check_delete = requests.get(url)
-        assert check_delete.status_code == 404
+        deleted_check = requests.get(url)
+        assert deleted_check.status_code == 404
     else:
         pytest.fail(f"Failed to delete order by ID, status code: {response.status_code}")
 
