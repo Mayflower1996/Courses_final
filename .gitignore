@@ -8,6 +8,10 @@
 *.py[cod]
 .tox/
 
-log.html
-report.html
-output.xml
+assets/
+.pytest_cache/
+allure-results/
+
+*.html
+*.xml
+*.css
