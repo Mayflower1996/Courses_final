@@ -1,7 +1,7 @@
 import pytest
 import requests
-from Tests.pet_tests_and_data.pet_data.url_headers import HEADERS, URL
-from Tests.pet_tests_and_data.pet_data.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_TWO_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD
+from tests.pet_tests_and_data.pet_data.url_headers import HEADERS, URL
+from tests.pet_tests_and_data.pet_data.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_TWO_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD
 
 
 @pytest.fixture
