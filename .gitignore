@@ -10,6 +10,7 @@
 
 assets/
 .pytest_cache/
+allure-results/
 
 *.html
 *.xml

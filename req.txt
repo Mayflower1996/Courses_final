@@ -10,3 +10,4 @@ jsonschema
 requests
 pytest_order
 pytest-html
+allure-pytest

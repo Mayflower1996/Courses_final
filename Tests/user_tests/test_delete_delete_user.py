@@ -1,9 +1,8 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from Tests.user_tests_and_data.user_data.url_headers import HEADERS, URL_USER
-from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
-from conftest import valid_username_create, invalid_username
+from data.url_headers import HEADERS, URL_USER
+from data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(16)

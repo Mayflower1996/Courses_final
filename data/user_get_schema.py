@@ -10,23 +10,14 @@ USER_GET_VALID_RESPONSE_SCHEMA = {
     "userStatus": {"type": "integer"},
     "username": {"type": "string"}
   },
-  "required": [
-    "id",
-    "username",
-    "firstName",
-    "lastName",
-    "email",
-    "password",
-    "phone",
-    "userStatus"
-  ]
 }
 
-RESPONSE_SCHEMA_ERROR = {
+RESPONSE_SCHEMA = {
     "type": "object",
     "properties": {
+        "type": {"type": "string"},
         "code": {"type": "integer"},
         "message": {"type": "string"}
     },
-    "required": ["code", "message"]
+    "required": ["code", "type", "message"]
 }

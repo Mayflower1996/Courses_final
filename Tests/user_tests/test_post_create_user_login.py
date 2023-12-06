@@ -1,8 +1,8 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from Tests.user_tests_and_data.user_data.url_headers import URL_USER, HEADERS
-from Tests.user_tests_and_data.user_data.user_get_schema import RESPONSE_SCHEMA
+from data.url_headers import URL_USER, HEADERS
+from data.user_get_schema import RESPONSE_SCHEMA
 
 
 @pytest.mark.order(12)

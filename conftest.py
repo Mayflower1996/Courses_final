@@ -1,8 +1,13 @@
 import pytest
 import requests
-from Tests.user_tests_and_data.user_data.url_headers import HEADERS, URL_USER
-from Tests.user_tests_and_data.user_data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
+from data.url_headers import HEADERS, URL_USER
+from data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
     CORRECT_USER_PAYLOADS
+
+
+@pytest.fixture(params=[f"{URL_USER}/createWithList", f"{URL_USER}/createWithArray"])
+def endpoint_url(request):
+    return request.param
 
 
 @pytest.fixture(scope="module")

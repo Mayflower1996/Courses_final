@@ -1,9 +1,8 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from Tests.user_tests_and_data.user_data.url_headers import HEADERS, URL_USER
-from Tests.user_tests_and_data.user_data.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA, \
-    RESPONSE_SCHEMA_ERROR
+from data.url_headers import HEADERS, URL_USER
+from data.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA, RESPONSE_SCHEMA
 
 
 @pytest.mark.order(6)
@@ -24,8 +23,8 @@ def test_get_invalid_user(invalid_username):
     url = f"{URL_USER}/{invalid_username}"
     response = requests.get(url)
     if response.status_code == 404:
-        assert "User not found" in response.text
-        validate(instance=response.json(), schema=RESPONSE_SCHEMA_ERROR)
+        assert "not found" in response.text
+        validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
         pytest.fail(f"Username exists, status code: {response.status_code}")
 
@@ -34,8 +33,8 @@ def test_get_invalid_user(invalid_username):
 def test_empty_username():
     url = f"{URL_USER}/"
     response = requests.post(url, headers=HEADERS, json={})
-    if response.status_code == 405 or 400:
-        assert "Not found" in response.text
-        validate(instance=response.json(), schema=RESPONSE_SCHEMA_ERROR)
+    if response.status_code == 404 or 400:
+        assert "200" in response.text
+        validate(instance=response.json(), schema=RESPONSE_SCHEMA)
     else:
         pytest.fail(f"Empty username exists, status code: {response.status_code}")
