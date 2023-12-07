@@ -5,7 +5,6 @@ from data.response_schema import RESPONSE_SCHEMA
 from data.url_headers import URL_USER, HEADERS
 
 
-@pytest.mark.order(12)
 def test_create_user_login(valid_login_user, user_payload_correct, valid_login):
     if valid_login_user == 200:
         url = f"{URL_USER}/"
@@ -17,7 +16,6 @@ def test_create_user_login(valid_login_user, user_payload_correct, valid_login):
         pytest.fail(f"User login failed, status code: {valid_login_user}")
 
 
-@pytest.mark.order(13)
 def test_create_user_not_login(user_payload_correct):
     url = f"{URL_USER}/"
     response = requests.post(url, headers=HEADERS, json=user_payload_correct)
@@ -28,7 +26,6 @@ def test_create_user_not_login(user_payload_correct):
         pytest.fail(f"User created, status code: {response.status_code}")
 
 
-@pytest.mark.order(14)
 def test_create_user_invalid_payload_login(valid_login_user, user_payload):
     if valid_login_user == 200:
         url = f"{URL_USER}/"

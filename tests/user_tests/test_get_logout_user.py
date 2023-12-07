@@ -5,7 +5,6 @@ from data.response_schema import RESPONSE_SCHEMA
 from data.url_headers import URL_USER, HEADERS
 
 
-@pytest.mark.order(19)
 def test_logout_user(valid_login_user, valid_login):
     if valid_login_user == 200:
         url = f"{URL_USER}/logout"
