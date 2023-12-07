@@ -8,13 +8,3 @@ ORDER_GET_VALID_RESPONSE_SCHEMA = {
                               "enum": ["placed", "approved", "delivered"]},
                    "complete": {"type": "boolean"}},
     "required": ["id", "petId", "quantity", "shipDate", "status", "complete"]}
-
-# response status schema, errors
-RESPONSE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "code": {"type": "integer", "format": "int32"},
-        "type": {"type": "string"},
-        "message": {"type": "string"}
-    }
-}

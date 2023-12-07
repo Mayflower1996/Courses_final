@@ -2,7 +2,7 @@ import pytest
 import requests
 from jsonschema.validators import validate
 from data.url_headers import URL_STORE
-from data.store_get_schema import RESPONSE_SCHEMA
+from data.response_schema import RESPONSE_SCHEMA
 
 
 def test_get_inventory(valid_pet_inventory_status):
