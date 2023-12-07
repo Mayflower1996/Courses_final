@@ -5,7 +5,6 @@ from data.response_schema import RESPONSE_SCHEMA
 from data.url_headers import HEADERS, URL_USER
 
 
-@pytest.mark.order(15)
 def test_update_user(valid_username_create, user_payload_correct):
     url = f"{URL_USER}/{valid_username_create}"
     response = requests.put(url, headers=HEADERS, json=user_payload_correct)
@@ -16,7 +15,6 @@ def test_update_user(valid_username_create, user_payload_correct):
         pytest.fail(f"User update failed, status code: {response.status_code}")
 
 
-@pytest.mark.order(16)
 def test_update_invalid_payload_user(valid_username_create, user_payload):
     url = f"{URL_USER}/{valid_username_create}"
     response = requests.put(url, headers=HEADERS, json=user_payload)
