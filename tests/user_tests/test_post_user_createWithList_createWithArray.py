@@ -1,10 +1,11 @@
 import pytest
 import requests
 from jsonschema import validate
+from data.response_schema import RESPONSE_SCHEMA
 from data.user_create_payload import CORRECT_TWO_USERS_PAYLOAD, \
     CORRECT_ONE_USER_PAYLOAD, INCORRECT_USER_PAYLOAD_LARGE_STATUS, USER_PAYLOAD_EMPTY_FIELDS
 from data.url_headers import HEADERS
-from data.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA, RESPONSE_SCHEMA
+from data.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA
 
 
 @pytest.mark.order(1)
