@@ -11,13 +11,3 @@ USER_GET_VALID_RESPONSE_SCHEMA = {
         "username": {"type": "string"}
     },
 }
-
-RESPONSE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "type": {"type": "string"},
-        "code": {"type": "integer"},
-        "message": {"type": "string"}
-    },
-    "required": ["code", "type", "message"]
-}

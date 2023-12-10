@@ -1,11 +1,10 @@
 import pytest
 import requests
 from jsonschema.validators import validate
+from data.response_schema import RESPONSE_SCHEMA
 from data.url_headers import HEADERS, URL_USER
-from data.user_get_schema import RESPONSE_SCHEMA
 
 
-@pytest.mark.order(9)
 def test_valid_login_user(valid_login):
     url = valid_login
     response = requests.get(url, headers=HEADERS, json={})
@@ -16,7 +15,6 @@ def test_valid_login_user(valid_login):
         pytest.fail(f"User login failed, status code: {response.status_code}")
 
 
-@pytest.mark.order(10)
 def test_login_invalid_user(invalid_login):
     url = invalid_login
     response = requests.get(url, headers=HEADERS, json={})
@@ -27,7 +25,6 @@ def test_login_invalid_user(invalid_login):
         pytest.fail(f"User login success, status code: {response.status_code}")
 
 
-@pytest.mark.order(11)
 def test_login_invalid_pass():
     url = f"{URL_USER}/login?username=testuser1&password=gsdfgsdfg"
     response = requests.get(url, headers=HEADERS, json={})
