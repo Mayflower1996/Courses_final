@@ -11,3 +11,4 @@ requests
 pytest_order
 pytest-html
 allure-pytest
+docker
