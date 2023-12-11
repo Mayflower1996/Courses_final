@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.11
 WORKDIR /app
 COPY req.txt .
 RUN pip install -r req.txt
