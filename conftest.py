@@ -1,9 +1,9 @@
 import pytest
 import requests
-from data.url_headers import HEADERS, URL_USER, URL_STORE, URL_PET
-from data.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
+from data_for_tests.url_headers import HEADERS, URL_USER, URL_STORE, URL_PET
+from data_for_tests.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
     CORRECT_USER_PAYLOADS
-from data.store_create_payload import VALID_ONE_PET_PAYLOAD, INVALID_ORDER_PAYLOADS, PET_INVENTORY_TEST_STATUS
+from data_for_tests.store_create_payload import VALID_ONE_PET_PAYLOAD, INVALID_ORDER_PAYLOADS, PET_INVENTORY_TEST_STATUS
 
 
 @pytest.fixture(params=[f"{URL_USER}/createWithList", f"{URL_USER}/createWithArray"])

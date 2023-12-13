@@ -1,9 +1,9 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from data.url_headers import URL_STORE
-from data.store_get_schema import ORDER_GET_VALID_RESPONSE_SCHEMA
-from data.response_schema import RESPONSE_SCHEMA
+from data_for_tests.url_headers import URL_STORE
+from data_for_tests.store_get_schema import ORDER_GET_VALID_RESPONSE_SCHEMA
+from data_for_tests.response_schema import RESPONSE_SCHEMA
 
 
 def test_get_valid_order(valid_order_create):

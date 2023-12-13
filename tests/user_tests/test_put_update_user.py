@@ -1,8 +1,8 @@
 import pytest
 import requests
 from jsonschema import validate
-from data.response_schema import RESPONSE_SCHEMA
-from data.url_headers import HEADERS, URL_USER
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.url_headers import HEADERS, URL_USER
 
 
 def test_update_user(valid_username_create, user_payload_correct):

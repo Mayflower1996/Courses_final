@@ -1,0 +1,10 @@
+.pytest_cache/
+.gitignore
+bitbucket-pipelines.yml
+/venv/
+.git/
+.idea/
+tox.ini
+README.md
+Dockerfile
+docker-compose.yml
