@@ -1,14 +1,8 @@
-FROM python:3.12
+FROM jenkins/jenkins:2.426.2-lts-jdk17
 
-RUN pip install --upgrade pip
+USER root
 
-WORKDIR /usr/src/the-pyoneers
+RUN apt-get update
 
-COPY req.txt .
-RUN pip install -r req.txt
-
-COPY . .
-
-EXPOSE 80
-
-CMD ["pytest", "tests/"]
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
