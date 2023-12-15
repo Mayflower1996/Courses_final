@@ -23,9 +23,9 @@ pip install -r req.txt
 base_url: http://petstore.swagger.io/v2
 
 ## Running the Tests
-User endpoint: pytest Tests/user_tests_and_data
-Pet endpoint: pytest Tests/pet_tests_and_data
-Store endpoint: pytest Tests/store_tests_and_data
+User endpoint: pytest tests/user_tests
+Pet endpoint: pytest tests/pet_tests
+Store endpoint: pytest tests/store_tests
 
 
 # Running All Tests
@@ -33,16 +33,17 @@ To run all the tests, execute the following command:
 pytest
 
 ## Test Structure
-The tests are organized in the Tests directory. Each endpoint (e.g., /user, /pet, /store) has its own test folder and files.
+The tests are organized in the 'tests' directory. Each endpoint (e.g., /user, /pet, /store) has its own test folder and files.
+Data for running tests are stored in 'data' directory.
 
 ## Generating Reports
-Pytest Framework will generate test reports in HTML format.
+Pytest Framework will generate test reports using Allure.
 
 ## Test Results
-After running the tests, you can find the test results in the output directory. Open the HTML report in your web browser to view the test results.
+After running the tests, you can find the test results in Allure.
 
 ## Contributing
-If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure your code passes the CircleCI. Leave PR for review for other team member.
+If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure your code passes the Pipeline. Leave PR for review for other team member.
 
 # Issues and Bug Reports
 If you encounter any issues or find bugs in the tests, please report them to Google Excel (request from the team)
