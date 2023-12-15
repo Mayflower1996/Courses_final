@@ -5,6 +5,7 @@ from data_for_tests.url_headers import URL as u
 from data_for_tests.response_schema import ResponseSchema as rs
 from data_for_tests.pet_create_payload import PetPayload as pp
 
+
 def test_create_pet_success():
     response = requests.post(u.URL_PET, headers=u.HEADERS, json=pp.CORRECT_ONE_PET_PAYLOAD)
     if response.status_code == 200:

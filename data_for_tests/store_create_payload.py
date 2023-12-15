@@ -18,13 +18,13 @@ class StorePayload:
         "complete": False
     },
         {
-        "id": 2,
-        "petId": 2,
-        "quantity": 2,
-        "shipDate": "2023-12-10T08:14:40.759Z",
-        "status": "placed",
-        "complete": False
-    }]
+            "id": 2,
+            "petId": 2,
+            "quantity": 2,
+            "shipDate": "2023-12-10T08:14:40.759Z",
+            "status": "placed",
+            "complete": False
+        }]
 
     INVALID_ORDER_PAYLOAD_EMPTY_FIELDS = {
         "id": 0,
@@ -66,7 +66,6 @@ class StorePayload:
                               ("Invalid order payload with large petID", INVALID_ORDER_PAYLOAD_LARGE_PETID),
                               ("Invalid order payload with large quantity", INVALID_ORDER_PAYLOAD_LARGE_QUANTITY),
                               ("Invalid order payload with empty fields", INVALID_ORDER_PAYLOAD_EMPTY_FIELDS)]
-
 
     PET_INVENTORY_TEST_STATUS = {
         "id": 9,
