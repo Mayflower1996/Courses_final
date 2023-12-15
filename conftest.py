@@ -4,7 +4,7 @@ import requests
 from data_for_tests.url_headers import HEADERS, URL_USER, URL_STORE, URL_PET
 from data_for_tests.user_create_payload import CORRECT_ONE_USER_PAYLOAD, USER_PAYLOADS, \
     CORRECT_USER_PAYLOADS
-from data_for_tests.pet_create_payload import UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID,\
+from data_for_tests.pet_create_payload import UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID, \
     UPDATE_PET_DATA_RESP_NAME, UPDATE_PET, CORRECT_FOUR_PET_PAYLOAD
 from data_for_tests.store_create_payload import VALID_ONE_PET_PAYLOAD, INVALID_ORDER_PAYLOADS, PET_INVENTORY_TEST_STATUS
 
@@ -96,7 +96,7 @@ def valid_pet_inventory_status():
         pytest.fail(f"Failed to create a pet, status code: {response.status_code}")
 
 
-##Yuliya's##
+# Yuliya's
 @pytest.fixture
 def new_pet_data():
     response = requests.post(URL_PET, headers=HEADERS, json=CORRECT_FOUR_PET_PAYLOAD)
@@ -126,7 +126,7 @@ def not_existing_pet_id():
 
 @pytest.fixture
 def pet_statuses():
-    status_list = ["available", "pending","sold"]
+    status_list = ["available", "pending", "sold"]
     return status_list
 
 
@@ -160,7 +160,7 @@ def update_pet_valid_formdata(get_pet_data):
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-        }, params={"name":UPDATE_PET_DATA_RESP["name"], "status": UPDATE_PET_DATA_RESP["status"]})
+        }, params={"name": UPDATE_PET_DATA_RESP["name"], "status": UPDATE_PET_DATA_RESP["status"]})
     assert response.status_code == 200
     return get_pet_data["id"]
 
@@ -171,7 +171,7 @@ def update_pet_invalid_formdata_status(get_pet_data):
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-        }, params={"name":UPDATE_PET_DATA_RESP["name"], "status": UPDATE_PET_DATA_RESP_INVALID["status"]})
+        }, params={"name": UPDATE_PET_DATA_RESP["name"], "status": UPDATE_PET_DATA_RESP_INVALID["status"]})
     assert response.status_code == 200
     return get_pet_data["id"]
 
@@ -182,7 +182,7 @@ def update_pet_formdata_name(get_pet_data):
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-        }, params={"name":UPDATE_PET_DATA_RESP_NAME["name"], "status": UPDATE_PET_DATA_RESP["status"]})
+        }, params={"name": UPDATE_PET_DATA_RESP_NAME["name"], "status": UPDATE_PET_DATA_RESP["status"]})
     assert response.status_code == 200
     return get_pet_data["id"]
 
@@ -193,7 +193,7 @@ def update_pet_formdata_empty(get_pet_data):
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-        }, params={"name":'', "status": ''})
+        }, params={"name": '', "status": ''})
     assert response.status_code == 200
     return get_pet_data["id"]
 

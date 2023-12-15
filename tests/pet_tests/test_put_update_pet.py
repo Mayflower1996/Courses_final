@@ -2,10 +2,9 @@ import pytest
 import requests
 from jsonschema.validators import validate
 from jsonschema import ValidationError
-from data.url_headers import URL_PET, HEADERS
-from data.response_schema import RESPONSE_SCHEMA
-from data.pet_create_payload import UPDATE_PET
-
+from data_for_tests.url_headers import URL_PET, HEADERS
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.pet_create_payload import UPDATE_PET
 
 
 def test_update_pet_name(create_and_update_pet):
@@ -20,4 +19,3 @@ def test_update_pet_name(create_and_update_pet):
         assert response_get.json() == UPDATE_PET
     else:
         pytest.fail(f"Pet update failed, status code: {response.status_code}")
-

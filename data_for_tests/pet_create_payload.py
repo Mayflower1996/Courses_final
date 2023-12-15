@@ -33,7 +33,7 @@ CORRECT_TWO_PET_PAYLOAD = {
   ],
   "status": "pending"
 }
-#such pet already exists
+# such pet already exists
 CORRECT_THREE_PET_PAYLOAD = {
   "id": 22,
   "category": {
@@ -71,13 +71,13 @@ CORRECT_FOUR_PET_PAYLOAD = {
   "status": "available"
 }
 
-#for updating pet tests
+# for updating pet tests
 UPDATE_PET = {
   "id": 299993,
-  "category": {"id":13, "name":"hamsters"},
+  "category": {"id": 13, "name": "hamsters"},
   "name": "Booba",
   "photoUrls": ["data/cat.gif"],
-  "tags": [{"id":432, "name":"Bad"}, {"id":43, "name":"Health_issues"}],
+  "tags": [{"id": 432, "name": "Bad"}, {"id": 43, "name": "Health_issues"}],
   "status": "pending"
 }
 
@@ -175,14 +175,11 @@ INCORRECT_ID_PET_PAYLOAD = {
   "status": "available"
 }
 
-#For tests updating pet with formData (name and status)
+# For tests updating pet with formData (name and status)
 UPDATE_PET_DATA_RESP = CORRECT_ONE_PET_PAYLOAD
 UPDATE_PET_DATA_RESP_INVALID = CORRECT_ONE_PET_PAYLOAD
 UPDATE_PET_DATA_RESP_NAME = CORRECT_ONE_PET_PAYLOAD
-# UPDATE_PET_DATA = [UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID, UPDATE_PET_DATA_RESP_NAME]
 UPDATE_PET_DATA_RESP["name"] = "Tesla"
 UPDATE_PET_DATA_RESP["status"] = "pending"
 UPDATE_PET_DATA_RESP_INVALID["status"] = "nostatus"
 UPDATE_PET_DATA_RESP_NAME["name"] = "-"
-
-

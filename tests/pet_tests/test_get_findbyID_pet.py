@@ -1,9 +1,9 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from data.url_headers import URL_PET
-from data.response_schema import RESPONSE_SCHEMA
-from data.pet_get_schema import PET_GET_VALID_RESPONSE_SCHEMA
+from data_for_tests.url_headers import URL_PET
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.pet_get_schema import PET_GET_VALID_RESPONSE_SCHEMA
 
 
 def test_get_find_existed_pet_by_id(new_pet_data):
