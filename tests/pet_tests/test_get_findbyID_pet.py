@@ -1,17 +1,26 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-# from data.url_headers import URL, HEADERS
-# from pet_get_schema import PET_GET_VALID_RESPONSE_SCHEMA
-# from data.url_headers import CORRECT_ONE_PET_PAYLOAD
+from data.url_headers import URL_PET
+from data.response_schema import RESPONSE_SCHEMA
+from data.pet_get_schema import PET_GET_VALID_RESPONSE_SCHEMA
 
 
-def test_find_pet_by_id(new_pet_data):
-    assert new_pet_data is not None
-    pet_id = new_pet_data[0]['id']
-    response = requests.get(f"{URL}/{pet_id}", headers=HEADERS)
-    assert response.status_code == 200
-    assert response.json()["id"] == pet_id
-    assert response.json()["name"] == CORRECT_ONE_PET_PAYLOAD["name"]
-    assert response.json()["status"] == CORRECT_ONE_PET_PAYLOAD["status"]
+def test_get_find_existed_pet_by_id(new_pet_data):
+    url = f"{URL_PET}/{new_pet_data}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        assert response.status_code == 200
+        assert "id" in response.json()
+        validate(instance=response.json(), schema=PET_GET_VALID_RESPONSE_SCHEMA)
+    else:
+        pytest.fail(f"Can't get pet by ID, status code: {response.status_code}")
 
+
+def test_find_not_existed_pet_by_id(not_existing_pet_id):
+    url = f"{URL_PET}/{not_existing_pet_id}"
+    response = requests.get(url)
+    if response.status_code == 404 or "Pet not found" in response.json():
+        validate(instance=response.json(), schema=RESPONSE_SCHEMA)
+    else:
+        pytest.fail(f"Pet with ID {not_existing_pet_id} exists, status code: {response.status_code}")

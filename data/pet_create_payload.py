@@ -1,4 +1,40 @@
 CORRECT_ONE_PET_PAYLOAD = {
+  "id": 229802,
+  "category": {
+    "id": 1,
+    "name": "Cats"
+  },
+  "name": "Pushistik",
+  "photoUrls": [
+  ],
+  "tags": [
+    {
+      "id": 708,
+      "name": "Catsforsale"
+    }
+  ],
+  "status": "available"
+}
+CORRECT_TWO_PET_PAYLOAD = {
+  "id": 24905,
+  "category": {
+    "id": 2,
+    "name": "Dogs"
+  },
+  "name": "Gabriel",
+  "photoUrls": [
+    ""
+  ],
+  "tags": [
+    {
+      "id": 709,
+      "name": "Dogsforsale"
+    }
+  ],
+  "status": "pending"
+}
+#such pet already exists
+CORRECT_THREE_PET_PAYLOAD = {
   "id": 22,
   "category": {
     "id": 1,
@@ -16,13 +52,81 @@ CORRECT_ONE_PET_PAYLOAD = {
   ],
   "status": "available"
 }
-CORRECT_TWO_PET_PAYLOAD = [{
-  "id": 24,
+CORRECT_FOUR_PET_PAYLOAD = {
+  "id": 299993,
   "category": {
     "id": 2,
     "name": "Dogs"
   },
-  "name": "Gabriel",
+  "name": "Tom",
+  "photoUrls": [
+    ""
+  ],
+  "tags": [
+    {
+      "id": 709,
+      "name": "Dogsforsale"
+    }
+  ],
+  "status": "available"
+}
+
+#for updating pet tests
+UPDATE_PET = {
+  "id": 299993,
+  "category": {"id":13, "name":"hamsters"},
+  "name": "Booba",
+  "photoUrls": ["data/cat.gif"],
+  "tags": [{"id":432, "name":"Bad"}, {"id":43, "name":"Health_issues"}],
+  "status": "pending"
+}
+
+PET_PAYLOAD_EMPTY_FIELDS = {
+    }
+REQUIRED_FIELDS_EMPTY_PET_PAYLOAD = {
+        "id": 345,
+        "category": {
+            "id": 1,
+            "name": "Cats"
+        },
+        "name": "",
+        "photoUrls": [
+            ""
+        ],
+        "tags": [
+            {
+                "id": 708,
+                "name": "Catsforsale"
+            }
+        ],
+        "status": "pending"
+    }
+INCORRECT_STATUS_PET_PAYLOAD = {
+  "id": 294,
+  "category": {
+    "id": 2,
+    "name": "Dogs"
+  },
+  "name": "Terry",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 709,
+      "name": "Dogsforsale"
+    }
+  ],
+  "status": "nostatus"
+}
+
+INCORRECT_ID1_PET_PAYLOAD = {
+  "id": -42294,
+  "category": {
+    "id": 2,
+    "name": "Dogs"
+  },
+  "name": "Tor",
   "photoUrls": [
     "string"
   ],
@@ -34,58 +138,51 @@ CORRECT_TWO_PET_PAYLOAD = [{
   ],
   "status": "pending"
 }
-    ]
-CORRECT_THREE_PET_PAYLOAD = {
-        "id": 2502,
-        "category": {
-            "id": 1,
-            "name": "Cats"
-        },
-        "name": "Chernysh",
-        "photoUrls": [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Blackcat-Lilith.jpg/440px-Blackcat-Lilith.jpg"
-        ],
-        "tags": [
-            {
-                "id": 708,
-                "name": "Catsforsale"
-            }
-        ],
-        "status": "sold"
+LONG_ID_PET_PAYLOAD = {
+  "id": 2945345689345678250671,
+  "category": {
+    "id": 2,
+    "name": "Dogs"
+  },
+  "name": "Don",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 709,
+      "name": "Dogsforsale"
     }
-PET_PAYLOAD_EMPTY_FIELDS = {
-        "id": 27,
-        "category": {
-            "id": 27,
-            "name": ""
-        },
-        "name": "",
-        "photoUrls": [
-            ""
-        ],
-        "tags": [
-            {
-                "id": 27,
-                "name": ""
-            }
-        ],
-        "status": ""
+  ],
+  "status": "available"
+}
+INCORRECT_ID_PET_PAYLOAD = {
+  "id": "id",
+  "category": {
+    "id": 2,
+    "name": "Dogs"
+  },
+  "name": "Donna",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 709,
+      "name": "Dogsforsale"
     }
-INCORRECT_STATUS_PET_PAYLOAD = {
-        "id": 345,
-        "category": {
-            "id": 1,
-            "name": "Cats"
-        },
-        "name": "Chery",
-        "photoUrls": [
-            ""
-        ],
-        "tags": [
-            {
-                "id": 708,
-                "name": "Catsforsale"
-            }
-        ],
-        "status": "nostatus"
-    }
+  ],
+  "status": "available"
+}
+
+#For tests updating pet with formData (name and status)
+UPDATE_PET_DATA_RESP = CORRECT_ONE_PET_PAYLOAD
+UPDATE_PET_DATA_RESP_INVALID = CORRECT_ONE_PET_PAYLOAD
+UPDATE_PET_DATA_RESP_NAME = CORRECT_ONE_PET_PAYLOAD
+# UPDATE_PET_DATA = [UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID, UPDATE_PET_DATA_RESP_NAME]
+UPDATE_PET_DATA_RESP["name"] = "Tesla"
+UPDATE_PET_DATA_RESP["status"] = "pending"
+UPDATE_PET_DATA_RESP_INVALID["status"] = "nostatus"
+UPDATE_PET_DATA_RESP_NAME["name"] = "-"
+
+
