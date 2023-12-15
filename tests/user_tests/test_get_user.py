@@ -1,9 +1,9 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from data.response_schema import RESPONSE_SCHEMA
-from data.url_headers import HEADERS, URL_USER
-from data.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.url_headers import HEADERS, URL_USER
+from data_for_tests.user_get_schema import USER_GET_VALID_RESPONSE_SCHEMA
 
 
 def test_get_valid_user(valid_username_create):

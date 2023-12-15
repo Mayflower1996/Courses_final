@@ -1,9 +1,9 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from data.url_headers import URL_STORE, HEADERS
-from data.response_schema import RESPONSE_SCHEMA
-from data.store_create_payload import VALID_ONE_PET_PAYLOAD, INVALID_TWO_PETS_PAYLOAD
+from data_for_tests.url_headers import URL_STORE, HEADERS
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.store_create_payload import VALID_ONE_PET_PAYLOAD, INVALID_TWO_PETS_PAYLOAD
 
 
 def test_place_pet_order():

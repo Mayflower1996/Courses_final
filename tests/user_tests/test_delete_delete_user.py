@@ -1,8 +1,8 @@
 import pytest
 import requests
 from jsonschema.validators import validate
-from data.response_schema import RESPONSE_SCHEMA
-from data.url_headers import HEADERS, URL_USER
+from data_for_tests.response_schema import RESPONSE_SCHEMA
+from data_for_tests.url_headers import HEADERS, URL_USER
 
 
 def test_delete_user(valid_username_create):
