@@ -3,9 +3,9 @@ import requests
 from jsonschema.validators import validate
 from data_for_tests.url_headers import URL_PET, HEADERS
 from data_for_tests.response_schema import RESPONSE_SCHEMA
-from data_for_tests.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD, PET_PAYLOAD_EMPTY_FIELDS, \
-    REQUIRED_FIELDS_EMPTY_PET_PAYLOAD, INCORRECT_STATUS_PET_PAYLOAD, LONG_ID_PET_PAYLOAD, \
-    INCORRECT_ID1_PET_PAYLOAD, INCORRECT_ID_PET_PAYLOAD
+from data_for_tests.pet_create_payload import CORRECT_ONE_PET_PAYLOAD, CORRECT_THREE_PET_PAYLOAD, \
+    PET_PAYLOAD_EMPTY_FIELDS, REQUIRED_FIELDS_EMPTY_PET_PAYLOAD, INCORRECT_STATUS_PET_PAYLOAD, \
+    LONG_ID_PET_PAYLOAD, INCORRECT_ID1_PET_PAYLOAD, INCORRECT_ID_PET_PAYLOAD
 
 
 def test_create_pet_success():

@@ -1,6 +1,7 @@
 import pytest
 import requests
-from data_for_tests.pet_create_payload import UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID, UPDATE_PET_DATA_RESP_NAME
+from data_for_tests.pet_create_payload import UPDATE_PET_DATA_RESP, UPDATE_PET_DATA_RESP_INVALID, \
+    UPDATE_PET_DATA_RESP_NAME
 from jsonschema.validators import validate
 from data_for_tests.url_headers import URL_PET, HEADERS
 from data_for_tests.response_schema import RESPONSE_SCHEMA
