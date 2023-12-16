@@ -1,7 +1,7 @@
 import os
 import pytest
 import requests
-from data_for_tests.url_headers import Url as u
+from data_for_tests.url_headers import URL as u
 from data_for_tests.user_create_payload import UserPayload as up
 from data_for_tests.pet_create_payload import PetPayload as pp
 from data_for_tests.store_create_payload import StorePayload as sp
@@ -199,7 +199,7 @@ def update_pet_formdata_empty(get_pet_data):
 @pytest.fixture
 def image_file_path(get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}/uploadImage"
-    path = os.path.join(os.path.dirname(__file__), "data_for_tests", "Pet_photo.jpg")
+    path = os.path.join(os.path.dirname(__file__), "data_for_tests", "data_for_tests/Pet_photo.jpg")
     response = requests.post(url, files={'file': open(path, 'rb')})
     assert response.status_code == 200
     return get_pet_data["id"]
