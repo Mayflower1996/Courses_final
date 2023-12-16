@@ -1,4 +1,4 @@
-class URL:
+class Url:
     HEADERS = {
       'Content-Type': 'application/json'
     }

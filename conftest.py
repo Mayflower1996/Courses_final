@@ -1,7 +1,7 @@
 import os
 import pytest
 import requests
-from data_for_tests.url_headers import URL as u
+from data_for_tests.url_headers import Url as u
 from data_for_tests.user_create_payload import UserPayload as up
 from data_for_tests.pet_create_payload import PetPayload as pp
 from data_for_tests.store_create_payload import StorePayload as sp
