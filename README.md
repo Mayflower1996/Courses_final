@@ -1,55 +1,70 @@
-# Pet Store API Testing with Pytest Framework #
+# Pet Store API Tests
 
-This repository contains automated API tests for the Pet Store, covering the `/user`, `/pet`, and `/store` endpoints, using the Pytest framework. 
-These tests help ensure the functionality and reliability of the Pet Store API.
+This repository contains automated tests for the Pet Store API. The tests cover
+the `/user`, `/pet`, and `/store` endpoints using the pytest framework. Additionally,
+Docker is used to facilitate testing and running builds within a 'myjenkins' container.
 
 ## Prerequisites
 
-Before running the tests, make sure you have the following prerequisites installed:
+- Docker installed on your machine
+- Docker images 'myjenkins' and 'swaggerapi/petstore' available
+- Jenkins installed on Docker Desktop
+- Bitbucket account and repository
+- Allure command-line tool installed
 
-- Python 3.x: https://www.python.org/downloads/
-- Pip: https://pip.pypa.io/en/stable/installation/
-- Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+## Running Tests Locally
 
-## Installation
+1. Clone this repository to your local machine:
 
-1. Clone the repository:
+    git clone https://yourusername/course-auto/the-pyoneers.git
+    cd tests
 
-git clone https://yourusername/course-auto/the-pyoneers.git
-pip install -r req.txt
+2. Install dependencies:
 
+    pip install -r req.txt
 
-*** Configuration ***
-base_url: http://petstore.swagger.io/v2
+3. Run the tests using pytest:
 
-## Running the Tests
-User endpoint: pytest tests/user_tests
-Pet endpoint: pytest tests/pet_tests
-Store endpoint: pytest tests/store_tests
+    pytest
 
-
-# Running All Tests
-To run all the tests, execute the following command:
-pytest
+    This will execute all tests in the repository. You can specify a specific test file or directory if needed.
+    E.g. pytest store-tests
 
 ## Test Structure
-The tests are organized in the 'tests' directory. Each endpoint (e.g., /user, /pet, /store) has its own test folder and files.
-Data for running tests are stored in 'data' directory.
 
-## Generating Reports
-Pytest Framework will generate test reports using Allure.
+The tests are organized in the 'tests' directory. Each endpoint (e.g., /user, /pet, /store) has its
+own test folder and files. Data for running tests are stored in 'data_for_tests' directory.
 
-## Test Results
-After running the tests, you can find the test results in Allure.
+## Running Tests in Docker
 
-## Contributing
-If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure your code passes the Pipeline. Leave PR for review for other team member.
+1. Build the Docker image:
 
-# Issues and Bug Reports
-If you encounter any issues or find bugs in the tests, please report them to Google Excel (request from the team)
+    docker build -t myjenkins
 
-Make sure to replace `yourusername` and any other placeholders with your actual information. This README provides a clear guide on how to set up, configure, 
-and run the tests using the ROBOT framework for the Pet Store API.
+
+## Setting up Jenkins on Docker Desktop
+
+1. Open Docker Desktop and click on "Ports."
+
+2. Access Jenkins in your browser at `http://localhost:8080`.
+
+3. Follow the Jenkins setup wizard to complete the installation.
+
+4. Install necessary Jenkins plugins, including the Bitbucket plugin.
+
+
+## Configuring Jenkins Job
+
+1. Request team to provide Pipeline script 
+
+
+## Reports
+
+Allure reports are configured in Jenkins. Reports are available after finished job in Jenkins.
+
+Now, Jenkins will pull the 'myjenkins' Docker image, clone the repository, and run the tests in a Docker container.
+
+Make sure to replace `yourusername` and any other placeholders with your actual information. 
 
 ## Who do I talk to?
 
@@ -57,3 +72,4 @@ Repo admins:
 yuliya.bychyk@gmail.com
 minsk.ivan.ogurtsov@gmail.com
 tanittoki@gmail.com
+
