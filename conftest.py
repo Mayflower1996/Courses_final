@@ -152,16 +152,24 @@ def get_pet_data(new_pet_data):
     return pet_data
 
 
-@pytest.fixture(params=[
-    {"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP["status"]},
-    {"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP_INVALID["status"]}
-])
-def update_pet_formdata(request, get_pet_data):
+@pytest.fixture
+def update_pet_valid_formdata(get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}"
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-    }, params=request.param)
+        }, params={"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP["status"]})
+    assert response.status_code == 200
+    return get_pet_data["id"]
+
+
+@pytest.fixture
+def update_pet_invalid_formdata_status(get_pet_data):
+    url = f"{u.URL_PET}/{get_pet_data['id']}"
+    response = requests.post(url, headers={
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json"
+        }, params={"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP_INVALID["status"]})
     assert response.status_code == 200
     return get_pet_data["id"]
 
