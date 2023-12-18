@@ -199,7 +199,10 @@ def update_pet_formdata_empty(get_pet_data):
 @pytest.fixture
 def image_file_path(get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}/uploadImage"
-    path = os.path.join(os.path.dirname(__file__), "data_for_tests", "data_for_tests/Pet_photo.jpg")
-    response = requests.post(url, files={'file': open(path, 'rb')})
+    image_path = "/data_for_tests/Pet_photo.jpg"
+    full_path = os.path.join(os.getcwd(), image_path)
+    with open(full_path, 'rb') as file:
+        image_data = file.read()
+    response = requests.post(url, files={'file': image_data})
     assert response.status_code == 200
     return get_pet_data["id"]
