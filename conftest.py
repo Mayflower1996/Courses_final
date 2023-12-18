@@ -199,7 +199,7 @@ def update_pet_formdata_empty(get_pet_data):
 @pytest.fixture
 def image_file_path(get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}/uploadImage"
-    image_path = "/data_for_tests/Pet_photo.jpg"
+    image_path = "data_for_tests/Pet_photo.jpg"
     full_path = os.path.join(os.getcwd(), image_path)
     with open(full_path, 'rb') as file:
         image_data = file.read()
