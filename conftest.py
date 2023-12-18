@@ -152,32 +152,27 @@ def get_pet_data(new_pet_data):
     return pet_data
 
 
-@pytest.fixture
-def update_pet_valid_formdata(get_pet_data):
+@pytest.fixture(params=[
+    {"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP["status"]},
+    {"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP_INVALID["status"]}
+])
+def update_pet_formdata(request, get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}"
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-        }, params={"name": pp.UPDATE_PET_DATA_RESP["name"], "status": pp.UPDATE_PET_DATA_RESP["status"]})
+    }, params=request.param)
     assert response.status_code == 200
     return get_pet_data["id"]
 
 
-@pytest.fixture(params=[
-    {"name_key": "name", "status_key": "status", "status_value": pp.UPDATE_PET_DATA_RESP["status"]},
-    {"name_key": "name", "status_key": "status", "status_value": pp.UPDATE_PET_DATA_RESP_INVALID["status"]},
-    {"name_key": "name", "status_key": "status", "status_value": pp.UPDATE_PET_DATA_RESP_NAME["name"]}
-])
-def update_pet_formdata(request, get_pet_data):
+@pytest.fixture
+def update_pet_formdata_name(get_pet_data):
     url = f"{u.URL_PET}/{get_pet_data['id']}"
-    params = {
-        request.param["name_key"]: pp.UPDATE_PET_DATA_RESP["name"],
-        request.param["status_key"]: request.param["status_value"]
-    }
     response = requests.post(url, headers={
         "Content-Type": "application/x-www-form-urlencoded",
         "accept": "application/json"
-    }, params=params)
+        }, params={"name": pp.UPDATE_PET_DATA_RESP_NAME["name"], "status": pp.UPDATE_PET_DATA_RESP["status"]})
     assert response.status_code == 200
     return get_pet_data["id"]
 
