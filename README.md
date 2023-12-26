@@ -17,7 +17,6 @@ Docker is used to facilitate testing and running builds within a 'myjenkins' con
 1. Clone this repository to your local machine:
 
     git clone https://yourusername/course-auto/the-pyoneers.git
-    cd tests
 
 2. Install dependencies:
 
@@ -39,7 +38,7 @@ own test folder and files. Data for running tests are stored in 'data_for_tests'
 
 1. Build the Docker image:
 
-    docker build -t myjenkins
+    docker build -t myjenkins .
 
 
 ## Setting up Jenkins on Docker Desktop
@@ -68,19 +67,17 @@ Make sure to replace `yourusername` and any other placeholders with your actual 
 
 ## Who do I talk to?
 
-Repo admins: 
-yuliya.bychyk@gmail.com
-minsk.ivan.ogurtsov@gmail.com
-tanittoki@gmail.com
+Repo admin: 
+jjgraffity@gmail.com
 
-<h1 align="center">Hi Ì±ã, I'm Ivan Ogurtsov</h1>
+<h1 align="center">Hi, I'm Ivan Ogurtsov</h1>
 <h3 align="center">A passionate AQA from Belarus</h3>
 
-- Ì±®‚ÄçÌ≤ª All of my projects are available at [https://github.com/Mayflower1996](https://github.com/Mayflower1996)
+- All of my projects are available at [https://github.com/Mayflower1996](https://github.com/Mayflower1996)
 
-- Ì≥´ How to reach me **minsk.ivan.ogurtsov@gmail.com**
+- How to reach me **minsk.ivan.ogurtsov@gmail.com**
 
-- Ì≥Ñ Know about my experiences [https://www.linkedin.com/in/ivan-ogurtsov-aqa/](https://www.linkedin.com/in/ivan-ogurtsov-aqa/)
+- Know about my experiences [https://www.linkedin.com/in/ivan-ogurtsov-aqa/](https://www.linkedin.com/in/ivan-ogurtsov-aqa/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -89,5 +86,6 @@ tanittoki@gmail.com
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://www.elastic.co" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg" alt="elasticsearch" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://grafana.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="40" height="40"/> </a> <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.selenium.dev" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium" width="40" height="40"/> </a> </p>
+
 
 
