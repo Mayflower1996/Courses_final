@@ -1,0 +1,19 @@
+version: '3'
+services:
+  service_petstore:
+    image: swaggerapi/petstore
+    ports:
+      - "32768:80"
+    networks:
+      - test_network
+
+  service_tests:
+    image: myjenkins
+    ports:
+      - "8080:8080"
+    networks:
+      - test_network
+
+networks:
+  test_network:
+    driver: bridge

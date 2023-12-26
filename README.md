@@ -1,60 +1,70 @@
-# Pet Store API Testing with ROBOT Framework #
+# Pet Store API Tests
 
-This repository contains automated API tests for the Pet Store, covering the `/user`, `/pet`, and `/store` endpoints, using the ROBOT framework. 
-These tests help ensure the functionality and reliability of the Pet Store API.
+This repository contains automated tests for the Pet Store API. The tests cover
+the `/user`, `/pet`, and `/store` endpoints using the pytest framework. Additionally,
+Docker is used to facilitate testing and running builds within a 'myjenkins' container.
 
 ## Prerequisites
 
-Before running the tests, you need to have the following prerequisites installed on your system:
+- Docker installed on your machine
+- Docker images 'myjenkins' and 'swaggerapi/petstore' available
+- Jenkins installed on Docker Desktop
+- Bitbucket account and repository
+- Allure command-line tool installed
 
-- Python 3.x
-- ROBOT Framework
-- Requests Library for ROBOT Framework
+## Running Tests Locally
 
-You can install ROBOT Framework and the Requests library using pip:
+1. Clone this repository to your local machine:
 
-pip install robotframework
-pip install robotframework-requests
+    git clone https://yourusername/course-auto/the-pyoneers.git
+    cd tests
 
-## Configuration
-Clone this repository to your local machine:
+2. Install dependencies:
 
-git clone https://yourusername/course-auto/the-pyoneers.git
+    pip install -r req.txt
 
-Open the tests/variables.robot file and set the base URL for the Pet Store API if necessary:
+3. Run the tests using pytest:
 
-*** Variables ***
-${BASE URL}    http://petstore.swagger.io/v2
+    pytest
 
-## Running the Tests
-You can run the tests using the ROBOT framework command-line tool. Here are the basic commands for running the tests:
+    This will execute all tests in the repository. You can specify a specific test file or directory if needed.
+    E.g. pytest store-tests
 
-# Running All Tests
-To run all the tests, execute the following command:
+## Test Structure
 
-robot tests
+The tests are organized in the 'tests' directory. Each endpoint (e.g., /user, /pet, /store) has its
+own test folder and files. Data for running tests are stored in 'data_for_tests' directory.
 
-# Running Specific Tests
-You can also run specific test suites or individual test cases by specifying their paths:
+## Running Tests in Docker
 
-robot tests/test_suite_name.robot
+1. Build the Docker image:
 
-## Generating Reports
-ROBOT Framework generates test reports in HTML format. To generate a report, use the --output option:
+    docker build -t myjenkins
 
-robot --output output.html tests
 
-## Test Results
-After running the tests, you can find the test results in the output directory. Open the HTML report in your web browser to view the test results.
+## Setting up Jenkins on Docker Desktop
 
-## Contributing
-If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure your code passes the CircleCI. Leave PR for review for other team member.
+1. Open Docker Desktop and click on "Ports."
 
-# Issues and Bug Reports
-If you encounter any issues or find bugs in the tests, please report them to Google Excel (request from the team)
+2. Access Jenkins in your browser at `http://localhost:8080`.
 
-Make sure to replace `yourusername` and any other placeholders with your actual information. This README provides a clear guide on how to set up, configure, 
-and run the tests using the ROBOT framework for the Pet Store API.
+3. Follow the Jenkins setup wizard to complete the installation.
+
+4. Install necessary Jenkins plugins, including the Bitbucket plugin.
+
+
+## Configuring Jenkins Job
+
+1. Request team to provide Pipeline script 
+
+
+## Reports
+
+Allure reports are configured in Jenkins. Reports are available after finished job in Jenkins.
+
+Now, Jenkins will pull the 'myjenkins' Docker image, clone the repository, and run the tests in a Docker container.
+
+Make sure to replace `yourusername` and any other placeholders with your actual information. 
 
 ## Who do I talk to?
 
@@ -62,3 +72,4 @@ Repo admins:
 yuliya.bychyk@gmail.com
 minsk.ivan.ogurtsov@gmail.com
 tanittoki@gmail.com
+

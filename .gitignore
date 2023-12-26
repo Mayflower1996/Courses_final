@@ -7,3 +7,12 @@
 
 *.py[cod]
 .tox/
+
+assets/
+.pytest_cache/
+allure-results/
+allure-report/
+
+*.html
+*.xml
+*.css
